@@ -34,7 +34,7 @@
 
 <script>
 import "@google-pay/button-element";
-import PaymentInfo from "./PaymentInfo.vue";
+//import PaymentInfo from "./PaymentInfo.vue";
 export default {
   name: "GooglePay",
   // props:  ['pay_total'],

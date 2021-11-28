@@ -3,7 +3,7 @@
     <b-container fluid>
     <b-row>
     <b-col sm="8" cols="12">
-    <Menu :Filt="filter" :FoodList="List" :Types="Types" 
+    <Menu :Filt="filterID" :FoodList="List" :Types="Types" 
       @change-filter="changeFilter"
       @openmodal="getModal"
     />
@@ -49,11 +49,7 @@
 import Menu from './components/menu.vue'
 import ModalFood from './components/Modal.vue'
 import GooglePay from "./components/GooglePay";
-<<<<<<< HEAD
-import axios from 'axios';
-=======
 // import FormInfo from './components/FormInfo.vue';
->>>>>>> 4b85b38c1a639dbb100d6849f220ab5931d75db2
 
 // import { mdbFooter, mdbContainer, mdbRow, mdbCol } from 'mdbvue';
 // export default {
