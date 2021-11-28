@@ -1,4 +1,15 @@
 <template>
+  <div>
+     <!-- carousel area -->
+    <b-card-group deck class="mb-0">
+        <b-card  v-for="item in currentPageCards" :key="item.index" class="center border-2" @click="$emit('change-filter',item.id)">
+            <!-- card content -->
+			<b-card-text class="text-align-center box_head" style=" padding:0 !important; min-width: 300% !important;">
+			<!-- <b-card-text class="text-align-center box_head"> -->
+			{{item.name}}
+            </b-card-text>
+        </b-card>
+    </b-card-group>
 
     <div>
         <!-- carousel area -->
@@ -104,4 +115,15 @@ export default {
     width: 2rem;
     height: 2rem;
 }
+<<<<<<< HEAD
 </style>
+=======
+
+/* .box_head {
+    min-width: 300%;
+    height: 80%;
+    padding: 0;
+    margin: auto;
+} */
+</style>
+>>>>>>> 4b85b38c1a639dbb100d6849f220ab5931d75db2

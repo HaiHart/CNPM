@@ -1,78 +1,39 @@
 <template>
   <div>
     <b-container fluid>
-      <b-row>
-        <b-col sm="8" cols="12">
-          <Menu
-            :Filt="getFilterId()"
-            :FoodList="List"
-            :Types="Types"
-            @change-filter="changeFilter"
-            @openmodal="getModal"
-          />
-        </b-col>
-        <b-col sm="4" cols="12">
-          <h1
-            style="
-              font-size: 55px;
-              font-weight: lighter;
-              border-bottom: solid 2px lightgrey;
-            "
-          >
-            Your Cart
-          </h1>
-          <div
-            class="header"
-            style="
-              display: flex;
-              justify-content: space-between;
-              background-color: #e8e8e8;
-              border: solid 1px lightgray;
-              padding-top: 10px;
-            "
-          >
-            <p style="margin-left: 10px">Item</p>
-            <p style="margin-right: 10px">Price</p>
-          </div>
-          <div
-            v-for="food in Cart"
-            :key="food.id"
-            style="
-              display: flex;
-              justify-content: space-between;
-              background-color: #e8e8e8;
-              border-radius: 10px;
-              margin: 20px auto;
-            "
-          >
-            <h1
-              v-if="food.qtity > 0"
-              style="font-weight: lighter; font-size: 40px; margin-left: 10px"
-            >
-              {{ food.qtity }} x {{ food.name }}:
-            </h1>
-            <h1
-              v-if="food.qtity > 0"
-              style="text-align: right; margin-right: 10px; color: #fa5401"
-            >
-              ${{ food.price }}
-            </h1>
-          </div>
-          <div
-            style="
-              text-align: right;
-              font-size: 40px;
-              border-top: double 2px lightgrey;
-            "
-          >
-            Total: ${{ total }}
-          </div>
+    <b-row>
+    <b-col sm="8" cols="12">
+    <Menu :Filt="filter" :FoodList="List" :Types="Types" 
+      @change-filter="changeFilter"
+      @openmodal="getModal"
+    />
+    </b-col>
+    <b-col sm="4" cols="12">
+      <h1 style="font-size:55px; font-weight: lighter; border-bottom: solid 2px lightgrey">Your Cart</h1> 
+      <div class="header" style="display:flex; justify-content:space-between;background-color:#E8E8E8;border:solid 1px lightgray; padding-top: 10px">
+        <p style="margin-left: 10px">Item</p>
+        <p style="margin-right: 10px">Price</p>
+      </div>
+      <div v-for="food in Cart" :key="food.id" style="display: flex; justify-content: space-between; background-color:#E8E8E8;border-radius: 10px; margin: 20px auto"><h1 v-if="food.qtity>0" style="font-weight: lighter; font-size:40px; margin-left:10px">{{food.qtity}} x {{food.name}}: </h1><h1 v-if="food.qtity>0" style="text-align:right;margin-right:10px;color:#FA5401">${{food.price}}</h1></div>
+      <div style="text-align: right; font-size: 40px; border-top: double 2px lightgrey">Total: ${{total}}</div>
+      
+      <div class="buttonclass sticky"><GooglePay :pay_total="total"/></div>
+      
+      <!-- <div><FormInfo @close="closeModal" v-show="this.openModal" /></div> -->
+      <!-- <Checkout : @close="closeModal" v-show="this.openModal" /> -->
 
-          <div class="buttonclass">
-            <GooglePay :pay_total="total" />
-          </div>
-        </b-col>
-      </b-row>
+      <!-- <mdb-footer color="blue" class="font-small pt-4 mt-4">
+        <mdb-container class="text-left">
+          <mdb-row>
+            <mdb-col sm="12">
+              <div class="buttonclass"><GooglePay :pay_total="total"/></div>
+            </mdb-col>
+          </mdb-row>
+        </mdb-container>
+      </mdb-footer> -->
+      
+    </b-col>
+    </b-row>
     </b-container>
     <ModalFood
       :side="side"
@@ -88,14 +49,29 @@
 import Menu from './components/menu.vue'
 import ModalFood from './components/Modal.vue'
 import GooglePay from "./components/GooglePay";
+<<<<<<< HEAD
 import axios from 'axios';
+=======
+// import FormInfo from './components/FormInfo.vue';
+>>>>>>> 4b85b38c1a639dbb100d6849f220ab5931d75db2
 
+// import { mdbFooter, mdbContainer, mdbRow, mdbCol } from 'mdbvue';
+// export default {
+// }
 
 export default {
   name: 'App',
+  
+  // name: 'FooterPage',
+
   components: {
     Menu, ModalFood,
     GooglePay,
+    // FormInfo,
+    // mdbFooter,
+    // mdbContainer,
+    // mdbRow,
+    // mdbCol
   },
   data() {
     return {
@@ -205,6 +181,7 @@ export default {
 </script>
 
 <style>
+<<<<<<< HEAD
 .foodBox_class img {
   /* float: left; */
   /* width:  100px; */
@@ -214,4 +191,27 @@ export default {
 .buttonclass {
   text-align: center;
 }
+=======
+  .foodBox_class img {
+    /* float: left; */
+    /* width:  100px; */
+    height: 250px;
+    object-fit: cover;
+  }
+  .buttonclass {
+    text-align: center;
+  }
+  div.sticky {
+    /* position: sticky;
+    bottom: 10px;
+    border: 3px solid #8AC007; */
+    /* position: absolute; */
+    bottom: 8px;
+    right: 16px;
+    font-size: 18px;
+
+    position: fixed;
+    text-align: center;
+  } 
+>>>>>>> 4b85b38c1a639dbb100d6849f220ab5931d75db2
 </style>
