@@ -97,9 +97,7 @@ export default {
         transactionState: "SUCCESS",
       };
     },
-    getTotalPrice() {
-      return this.pay_total.toString();
-    },
+    
   },
 };
 </script>

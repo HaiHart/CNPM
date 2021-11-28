@@ -30,12 +30,12 @@
 <script>
 export default {
     name:'FormInfo',
-    data: {
-        form :{
+    data() {
+        return{form :{
             name: '',
             address: '',
             phone: ''
-        }
+        }}
     }    
 }
 </script>
