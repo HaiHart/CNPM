@@ -50,7 +50,7 @@ import Menu from './components/menu.vue'
 import ModalFood from './components/Modal.vue'
 import GooglePay from "./components/GooglePay";
 // import FormInfo from './components/FormInfo.vue';
-
+import { axios } from "axios";
 // import { mdbFooter, mdbContainer, mdbRow, mdbCol } from 'mdbvue';
 // export default {
 // }
@@ -177,17 +177,6 @@ export default {
 </script>
 
 <style>
-<<<<<<< HEAD
-.foodBox_class img {
-  /* float: left; */
-  /* width:  100px; */
-  height: 250px;
-  object-fit: cover;
-}
-.buttonclass {
-  text-align: center;
-}
-=======
   .foodBox_class img {
     /* float: left; */
     /* width:  100px; */
@@ -209,5 +198,4 @@ export default {
     position: fixed;
     text-align: center;
   } 
->>>>>>> 4b85b38c1a639dbb100d6849f220ab5931d75db2
 </style>

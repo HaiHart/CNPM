@@ -56,9 +56,7 @@ export default {
     },
     computed: {
         currentPageCards() {
-
             this.createPages();
-
             return this.paginatedCards[this.currentPageIndex];
         }
     },
@@ -115,9 +113,6 @@ export default {
     width: 2rem;
     height: 2rem;
 }
-<<<<<<< HEAD
-</style>
-=======
 
 /* .box_head {
     min-width: 300%;
@@ -126,4 +121,3 @@ export default {
     margin: auto;
 } */
 </style>
->>>>>>> 4b85b38c1a639dbb100d6849f220ab5931d75db2
